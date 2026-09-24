@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ebbwise — Privacy Policy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="mark"><span class="mark-fill"></span></span>
+    <h1>Ebbwise — Privacy Policy</h1>
+    <div class="updated">Last updated: September 24, 2026</div>
+  </header>
+
+  <div class="notice">
+    <p><strong>Draft notice:</strong> this document has not been reviewed by a lawyer. It is a good-faith, plain-language description of what the app actually does, intended as a starting point for review by qualified legal counsel before or shortly after publication.</p>
+  </div>
+
+  <p class="lede">Almost everything Ebbwise knows about you stays on your device, in a local database. Nothing is sent to a Phantom Lab server, because Phantom Lab doesn't run one.</p>
+  <p>The only network calls the app makes are to a weather provider (to fetch a forecast for your location) and to the third-party services listed below — each described specifically, including what they <em>don't</em> see.</p>
+
+  <h2>what we collect</h2>
+  <table>
+    <tr><th>Data</th><th>What it is</th><th>Where it's stored</th></tr>
+    <tr><td>Check-in answers</td><td>Morning wake-up level, optional symptom tags (Legs / Vision / Fog / Pain / Balance), evening "did today match?" answer</td><td>On-device only</td></tr>
+    <tr><td>Fall records</td><td>That a fall happened, when, and an optional note</td><td>On-device only</td></tr>
+    <tr><td>Location</td><td>Latitude/longitude, to fetch the weather forecast for where you are</td><td>On-device only</td></tr>
+    <tr><td>Onboarding answers</td><td>Heat threshold, humidity/hot-shower sensitivity, recovery speed</td><td>On-device only</td></tr>
+    <tr><td>Settings</td><td>Appointment date, theme choice, notification preferences</td><td>On-device only</td></tr>
+  </table>
+  <p>All of this lives in a local database inside the app's own storage on your phone. <strong>We never see it, and it is never uploaded to any server we operate.</strong></p>
+
+  <h2>about location, specifically</h2>
+  <p>Ebbwise asks for your location once (and again whenever you tap "Update location") to look up the weather forecast for where you are — that's the only reason it's requested. The most recent reading is kept on your device so the app doesn't need to ask again every time it needs a forecast; it is not turned into a location history or track, and it is never sent anywhere except as part of a weather-lookup request to our weather provider (Open-Meteo). If you deny location access, the app keeps working with weather-independent estimates.</p>
+
+  <h2>signing in with apple (optional)</h2>
+  <p>Ebbwise works fully without an account. If you choose to sign in with Apple, we store only your Apple-provided identifier and email address, in an isolated database on Cloudflare, entirely separate from your health/check-in data. This identity is used only to let you delete your account from another device if needed; it does not sync or back up your health data, which never leaves your device even if you sign in.</p>
+
+  <h2>third parties</h2>
+  <p>Ebbwise uses a small number of third-party services, each for a single, specific job. None of them receive your health data, symptom tags, fall records, or location.</p>
+  <table>
+    <tr><th>Service</th><th>What it's for</th><th>What it sees</th><th>What it does <em>not</em> see</th></tr>
+    <tr><td><strong>RevenueCat</strong></td><td>Processing and validating subscription purchases</td><td>Purchase/subscription events, device and platform identifiers needed for receipt validation</td><td>Check-ins, symptom tags, fall records, location</td></tr>
+    <tr><td><strong>OneSignal</strong></td><td>Requesting notification permission, registering your device for reminders</td><td>Push token, device registration, permission status</td><td>The content of your check-ins — reminders are scheduled and shown locally on your device, not sent through OneSignal's servers</td></tr>
+    <tr><td><strong>Layers</strong></td><td>Product analytics</td><td>A single event when you share the neurologist report ("a report was shared")</td><td>The contents of the report, or any check-in/health data</td></tr>
+    <tr><td><strong>AdMob</strong></td><td>An optional rewarded ad (unlock one pattern insight for the day, free-tier only)</td><td>Standard ad-request signals</td><td>Your health data, location, or check-in history — the ad request carries no user data, on purpose</td></tr>
+  </table>
+
+  <div class="callout">
+    <p><strong>None of your health data, location, or check-in data is ever used for ad targeting.</strong> This is a deliberate design decision, not an oversight — the AdMob integration sends an empty ad request by design.</p>
+    <p><strong>Ebbwise does not track you, and does not ask for tracking permission.</strong> The app does not request App Tracking Transparency permission on iOS, does not use your data to track you across other companies' apps or websites, and never shares any data with third parties for their own advertising purposes. The one ad shown in the app is requested as a non-personalized ad, on purpose.</p>
+  </div>
+
+  <h2>deleting your data</h2>
+  <p>Everything Ebbwise stores lives in the app's own local storage. Uninstalling the app deletes it. If you signed in with Apple, you can delete your account (and the identity record described above) from the app's Profile screen at any time; this has no effect on your locally-stored health data, since it was never linked to that account in the first place. (Your phone's own backup system — iCloud or Google account backup — may include app data as part of a normal full-device backup, the same as it would for any app; that's a setting on your device, not something Ebbwise controls.)</p>
+
+  <h2>health data</h2>
+  <p>Ebbwise is not a medical device. It does not diagnose, treat, or predict any medical condition. Everything it shows you — bands, recommendations, pattern cards — is built entirely from your own check-ins and public weather data, described in plain, past-tense language ("your records show...").</p>
+
+  <h2>children</h2>
+  <p>Ebbwise is not directed at children and is not knowingly used to collect data from anyone under 13 (or the relevant age of digital consent in your region).</p>
+
+  <h2>changes to this policy</h2>
+  <p>If this policy changes, the "last updated" date at the top will change too. We won't quietly narrow your rights over data you've already given us — there isn't any to narrow, since it never left your device.</p>
+
+  <footer>
+    Questions about this policy or your data:
+    <a href="mailto:ebbwiseapp@gmail.com">ebbwiseapp@gmail.com</a>
+    · <a href="terms.html">Terms of Use</a>
+  </footer>
+</div>
+</body>
+</html>
