@@ -18,8 +18,8 @@
     <p><strong>Draft notice:</strong> this document has not been reviewed by a lawyer. It is a good-faith, plain-language description of what the app actually does, intended as a starting point for review by qualified legal counsel before or shortly after publication.</p>
   </div>
 
-  <p class="lede">Almost everything Ebbwise knows about you stays on your device, in a local database. Nothing is sent to a Phantom Lab server, because Phantom Lab doesn't run one.</p>
-  <p>The only network calls the app makes are to a weather provider (to fetch a forecast for your location) and to the third-party services listed below — each described specifically, including what they <em>don't</em> see.</p>
+  <p class="lede">Almost everything Ebbwise knows about you — your check-ins, symptom tags, fall records, and location — stays on your device, in a local database, and never reaches any server we operate.</p>
+  <p>The one exception is signing in: if you choose to use Sign in with Apple (entirely optional — the app works fully without an account), your Apple-provided identifier and email are sent to our own server — see "signing in with apple" below. The only other network calls the app makes are to a weather provider (to fetch a forecast for your location) and to the third-party services listed below — each described specifically, including what they <em>don't</em> see.</p>
 
   <h2>what we collect</h2>
   <table>
@@ -29,8 +29,9 @@
     <tr><td>Location</td><td>Latitude/longitude, to fetch the weather forecast for where you are</td><td>On-device only</td></tr>
     <tr><td>Onboarding answers</td><td>Heat threshold, humidity/hot-shower sensitivity, recovery speed</td><td>On-device only</td></tr>
     <tr><td>Settings</td><td>Appointment date, theme choice, notification preferences</td><td>On-device only</td></tr>
+    <tr><td>Account identity (only if you sign in)</td><td>Apple's account identifier and the email you choose to share via Sign in with Apple</td><td>Sent to and stored on our own server — see "signing in with apple" below</td></tr>
   </table>
-  <p>All of this lives in a local database inside the app's own storage on your phone. <strong>We never see it, and it is never uploaded to any server we operate.</strong></p>
+  <p>All of the rows above except account identity live in a local database inside the app's own storage on your phone. <strong>We never see them, and they are never uploaded to any server we operate.</strong></p>
 
   <h2>about location, specifically</h2>
   <p>Ebbwise asks for your location once (and again whenever you tap "Update location") to look up the weather forecast for where you are — that's the only reason it's requested. The most recent reading is kept on your device so the app doesn't need to ask again every time it needs a forecast; it is not turned into a location history or track, and it is never sent anywhere except as part of a weather-lookup request to our weather provider (Open-Meteo). If you deny location access, the app keeps working with weather-independent estimates.</p>
@@ -44,7 +45,6 @@
     <tr><th>Service</th><th>What it's for</th><th>What it sees</th><th>What it does <em>not</em> see</th></tr>
     <tr><td><strong>RevenueCat</strong></td><td>Processing and validating subscription purchases</td><td>Purchase/subscription events, device and platform identifiers needed for receipt validation</td><td>Check-ins, symptom tags, fall records, location</td></tr>
     <tr><td><strong>OneSignal</strong></td><td>Requesting notification permission, registering your device for reminders</td><td>Push token, device registration, permission status</td><td>The content of your check-ins — reminders are scheduled and shown locally on your device, not sent through OneSignal's servers</td></tr>
-    <tr><td><strong>Layers</strong></td><td>Product analytics</td><td>A single event when you share the neurologist report ("a report was shared")</td><td>The contents of the report, or any check-in/health data</td></tr>
     <tr><td><strong>AdMob</strong></td><td>An optional rewarded ad (unlock one pattern insight for the day, free-tier only)</td><td>Standard ad-request signals</td><td>Your health data, location, or check-in history — the ad request carries no user data, on purpose</td></tr>
   </table>
 
